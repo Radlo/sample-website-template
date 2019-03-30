@@ -1,0 +1,349 @@
+$dark-color: rgb(0, 81, 119);
+$light-color: rgb(236, 236, 236);
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+  "main-nav main-nav main-nav"
+  "top-container top-container top-container"
+  "practice-areas practice-areas practice-areas"
+  "info info info"
+  "attorneys attorneys attorneys"
+  "contact contact contact"
+  "footer footer footer";
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-nav {
+  background: $light-color;
+  grid-area: main-nav;
+  z-index: 10;
+  padding: 0 2rem 0 2rem;
+  position: sticky;
+  top: 0;
+  
+  .logo {
+    float: left;
+    width: 45%;
+    
+    h1 {
+      color: $dark-color;
+      font-family: 'Times New Roman', Times, serif;
+      letter-spacing: 0.1rem;
+    }
+  }
+  
+  ul {
+    float: right;
+    text-align: center;
+    li {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      
+      a {
+        color: $dark-color;
+        font-size: 0.8rem;
+      }
+      
+      a:hover {
+        color: rgb(31, 255, 255);
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+.top-container {
+  grid-area: top-container;
+  background: url("https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  grid-template-areas:
+  "top-content .";
+  
+  .top-content {
+    grid-area: top-content;
+    background: rgba(0, 124, 207, 0.45);
+    overflow: hidden;
+    .content {
+      margin: 20rem 1rem;
+      width: 35%;
+      color: white;
+      float: right;
+      margin-right: 5rem;
+      
+      h1 {
+        font-weight: 900;
+        font-size: 3rem;
+        margin: 0;
+      }
+      
+      h2 {
+        font-weight: 200;
+        font-size: 2.5rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+.practice-areas {
+  grid-area: practice-areas;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: 
+  ". practice-outer .";
+  
+  .practice-outer {
+    grid-area: practice-outer;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:  
+      "title practice-inner";
+    padding: 4rem 4rem 5rem 4rem;
+    
+    .title {
+      grid-area: title;
+      background: $light-color;
+
+      p {
+        float: right;
+        margin: 10rem 5rem;
+        font-size: 2.5rem;
+        color: $dark-color;
+      }
+    }
+    
+    .practice-inner {
+      grid-area: practice-inner;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+      grid-gap: 40px;
+      padding: 3rem 3rem 4rem 3rem;
+      margin-top: 3rem;
+      
+      .boxes {
+        i {
+          margin-right: 5px;
+          color: rgb(0, 175, 175);
+          font-size: 0.5rem;
+        }
+        
+        span {
+          color: $dark-color;
+        }
+      }
+    }
+  }
+  
+}
+
+.info {
+  grid-area: info;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+  ". info-container .";
+  background: $dark-color;
+  padding: 4rem 4rem 5rem 4rem;
+  
+  .info-container {
+    grid-area: info-container;
+    color: $light-color;
+    text-align: center;
+    margin-bottom: 3rem;
+    
+    h2 {
+      font-size: 3rem;
+      padding: 2rem;
+    }
+    
+    p {
+      font-weight: 100;
+      letter-spacing: 0.05rem;
+      padding: 1rem;
+    }
+  }
+}
+
+.attorneys {
+  grid-area: attorneys;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: 
+  ". att-container .";
+  
+  .att-container {
+    grid-area: att-container;
+    text-align: center;
+    padding: 2rem 4rem 5rem 4rem;
+    
+    h2 {
+      padding: 2.5rem;
+      font-size: 3rem;
+      color: $dark-color;
+    }
+    
+    .attorney-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 40px;
+      
+      .attorney-contact {
+        text-align: center;
+        
+        img {
+          width: 100%;
+          height: 200px;
+        }
+        
+        h3 {
+          color: $dark-color;
+        }
+        
+        .border {
+          width: 100%;
+          color: $dark-color;
+        }
+        
+        p {
+          color: $dark-color;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  grid-area: contact;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:  
+  ". contact-container .";
+  
+  background: url("https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  .contact-container {
+    grid-area: contact-container;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:    
+    "h2 right-side";
+    
+    h2 {
+      grid-area: h2;
+      font-size: 2rem;
+      color: white;
+      padding: 5rem;
+    }
+    
+    .right-side {
+      grid-area: right-side;
+      color: white;
+      padding: 3rem;
+      
+      .address {
+        padding: 2rem;
+        a {
+          text-decoration: none;
+          color: rgb(131, 247, 255);
+        }
+      }
+      
+      .form-section {
+        padding: 0 2rem;
+      }
+      
+      form {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:  
+        "name name message message"
+        "email email message message"
+        "subject subject message message"
+        ". . . submit";
+        
+        .name {
+          grid-area: name;
+        }
+        
+        .email {
+          grid-area: email;
+        }
+        
+        .subject {
+          grid-area: subject;
+        }
+        
+        .message {
+          grid-area: message;
+        }
+        
+        .submit {
+          grid-area: submit;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 3rem;
+  background: $dark-color;
+  text-decoration: none;
+
+
+  a {
+    color: $light-color;
+  }
+
+  .btn {
+    display: block;
+    color: $light-color;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .wrapper {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "main-nav"
+    "top-container"
+    "practice-areas"
+    "info"
+    "attorneys"
+    "contact"
+    "footer";
+  }
+}
